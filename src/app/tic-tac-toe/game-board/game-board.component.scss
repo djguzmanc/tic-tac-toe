@@ -1,0 +1,7 @@
+.game {
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  width: fit-content;
+  gap: 8px;
+  margin: 0 auto;
+}

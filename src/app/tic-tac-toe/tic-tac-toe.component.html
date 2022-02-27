@@ -1,0 +1,24 @@
+<main>
+  <h1 class="game-title">Tic Tac Toe</h1>
+  <h2 
+    class="game-notifier"
+    [class.game-notifier--win]="gameHasWinner"
+    [class.game-notifier--tie]="gameIsTie">{{ gameMessage() }}</h2>
+  <app-game-board class="board">
+    <ng-container *ngFor="let row of board; let r = index" >
+      <app-game-cell
+        *ngFor="let cell of row; let c = index"
+        (click)="onCellClick(cell)"
+        [selected]="cell.selected"
+        [winner]="cell.winner"
+        [type]="cell.type"></app-game-cell>
+    </ng-container>
+  </app-game-board>
+
+  <section class="actions">
+    <button 
+      mat-raised-button
+      color="primary"
+      (click)="onResetClick()">Reset</button>
+  </section>
+</main>

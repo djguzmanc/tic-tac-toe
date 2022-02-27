@@ -1,0 +1,8 @@
+<div 
+  class="game-cell"
+  [class.game-cell--win]="winner"
+  matRipple>
+  <mat-icon 
+    *ngIf="selected" 
+    class="icon">{{ type | iconType }}</mat-icon>
+</div>
